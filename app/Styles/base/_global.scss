@@ -1,0 +1,11 @@
+@use "../abstracts/variables" as *;
+
+.layout {
+  display: flex;
+  background: #f5f6fa;
+   overflow: auto;
+}
+
+.content {
+  flex: 1;
+}
