@@ -13,12 +13,11 @@
 
 .form {
   width: 100%;
-  max-width: 660px;   
+  max-width: 660px;
   background: $neutral-200;
   padding: clamp(20px, 4vw, 40px);
   border-radius: 16px;
   box-shadow: $shadow-01;
-
 
   &__title {
     font-size: 22px;
