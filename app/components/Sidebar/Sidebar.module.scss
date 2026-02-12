@@ -1,20 +1,64 @@
 @use "../../styles/abstracts/variables" as *;
 @use "../../styles/abstracts/shadows" as *;
 @use "../../styles/abstracts/typography" as *;
+@use "../../styles/abstracts/breakpoints" as *;
 
 .sidebar {
   min-height: 100vh;
-  min-width: 320px;  
-  flex-shrink: 0; 
+  width: 320px;
+  min-width: 320px;
+  flex-shrink: 0;
   background: $purple-200;
   padding: 40px $display-7;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   border-radius: $display-6;
-
+  transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+@include tablet {
+  .sidebar {
+    width: 90px;
+    min-width: 90px;
+    padding: 32px 10px;
+    align-items: center;
+  }
+
+  .logo span,
+  .content,
+  .help p {
+    display: none;
+  }
+
+  .stepWrapper {
+    justify-content: center;
+    gap: 0;
+  }
+
+  .line {
+    height: 26px;
+  }
+}
+
+@include mobile {
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 280px;
+    min-width: 280px;
+    height: 100dvh;
+    border-radius: 0;
+    padding-top: calc($display-11 + env(safe-area-inset-top));
+    transform: translateX(-100%);
+    z-index: 4000;
+    box-shadow: 10px 0 $display-7 rgba(0, 0, 0, 0.18);
+  }
+
+  .open {
+    transform: translateX(0);
+  }
+}
 
 .logo {
   display: flex;
@@ -27,15 +71,31 @@
   &Icon {
     width: $display-6;
     height: $display-6;
-    background: radial-gradient(circle at 4px 4px, $purple-700 3px, transparent 4px),
-      radial-gradient(circle at $display-1 4px, $purple-700 3px, transparent 4px),
-      radial-gradient(circle at $display-5 4px, $purple-700 3px, transparent 4px),
-      radial-gradient(circle at 8px $display-1, $purple-700 3px, transparent 4px),
-      radial-gradient(circle at $display-3 $display-1, $purple-700 3px, transparent 4px);
+    background:
+      radial-gradient(circle at 4px 4px, $purple-700 3px, transparent 4px),
+      radial-gradient(
+        circle at $display-1 4px,
+        $purple-700 3px,
+        transparent 4px
+      ),
+      radial-gradient(
+        circle at $display-5 4px,
+        $purple-700 3px,
+        transparent 4px
+      ),
+      radial-gradient(
+        circle at 8px $display-1,
+        $purple-700 3px,
+        transparent 4px
+      ),
+      radial-gradient(
+        circle at $display-3 $display-1,
+        $purple-700 3px,
+        transparent 4px
+      );
     background-repeat: no-repeat;
   }
 }
-
 
 .steps {
   margin-top: 50px;
@@ -73,7 +133,6 @@
   color: $white;
   box-shadow: $shadow-03;
 }
-
 .completed {
   background: $purple-700;
   color: $white;
@@ -86,43 +145,81 @@
   background: $neutral-400;
   transition: background 0.3s ease;
 }
-
 .lineActive {
   background: $purple-600;
 }
 
-
-.content {
-  h4 {
-    font-size: $display-3;
-    font-weight: $display-font-1;
-    margin-bottom: 6px;
-    color: $neutral-800;
-    line-height: $lh-default;
-  }
-
-  p {
-    font-size: $display-2;
-    color: $neutral-500;
-    line-height: $lh-default;
-  }
+.content h4 {
+  font-size: $display-3;
+  font-weight: $display-font-1;
+  margin-bottom: 6px;
+  color: $neutral-800;
+  line-height: $lh-default;
 }
 
+.content p {
+  font-size: $display-2;
+  color: $neutral-500;
+  line-height: $lh-default;
+}
 
 .help {
   margin-top: 40px;
   padding-top: $display-6;
   border-top: 1px solid $neutral-400;
+}
 
-  h4 {
-    font-size: $display-3;
-    font-weight: $display-font-1;
-    color: $neutral-800;
-    margin-bottom: 4px;
+.help h4 {
+  font-size: $display-3;
+  font-weight: $display-font-1;
+  color: $neutral-800;
+  margin-bottom: 4px;
+}
+.help p {
+  font-size: $display-2;
+  color: $neutral-500;
+}
+
+.menuBtn {
+  position: fixed;
+  top: calc($display-2 + env(safe-area-inset-top));
+  left: $display-2;
+  z-index: 5000;
+  display: none;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: none;
+  background: $white;
+  box-shadow: $shadow-03;
+  cursor: pointer;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  span {
+    width: $display-5;
+    height: 2px;
+    background: $neutral-800;
+    transition: all 0.3s ease;
   }
 
-  p {
-    font-size: $display-2;
-    color: $neutral-500;
+  @include mobile {
+    display: flex;
   }
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  z-index: 3500;
+}
+
+body.sidebar-open {
+  overflow: hidden;
 }

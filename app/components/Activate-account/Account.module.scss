@@ -15,7 +15,7 @@
   width: 100%;
   max-width: 720px;
   background: $neutral-300;
-  padding: clamp($display-6, 4vw, 48px);
+  padding: clamp($display-6, 4vw, $display-9);
   border-radius: $display-4;
   box-shadow: $shadow-01;
 }
