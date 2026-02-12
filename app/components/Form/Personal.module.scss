@@ -1,6 +1,7 @@
 @use "../../styles/abstracts/variables" as *;
 @use "../../styles/abstracts/shadows" as *;
 @use "../../styles/abstracts/typography" as *;
+@use "../../styles/abstracts/breakpoints" as *;
 
 .formWrapper {
   display: flex;
@@ -75,27 +76,7 @@
     margin-top: 30px;
     display: flex;
     justify-content: flex-end;
-
-    button {
-      padding: 12px 30px;
-      border-radius: 12px;
-      border: none;
-      font-weight: 600;
-      font-size: 14px;
-      cursor: pointer;
-      background: linear-gradient(135deg, #9333ea, #6d28d9);
-      color: #fff;
-      transition: 0.3s;
-
-      &:disabled {
-        opacity: 0.5;
-        cursor: not-allowed;
-      }
-
-      &:hover:not(:disabled) {
-        transform: translateY(-2px);
-        box-shadow: $shadow-01;
-      }
-    }
   }
 }
+
+
