@@ -8,7 +8,7 @@ import Button from "../Common/Button";
 
 type Props = {
   setCurrentStep: React.Dispatch<React.SetStateAction<number>>;
-  setFormData: React.Dispatch<React.SetStateAction<FormData |null >>;
+  setFormData: React.Dispatch<React.SetStateAction<FormData | null>>;
 };
 
 export default function PersonalForm({ setCurrentStep, setFormData }: Props) {

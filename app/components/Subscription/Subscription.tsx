@@ -7,9 +7,9 @@ import { FiCalendar } from "react-icons/fi";
 import { Plans } from "./Subscription-plan";
 import Button from "../Common/Button";
 
-interface Props {
+type Props = {
   setCurrentStep: (step: number) => void;
-}
+};
 
 export default function Subscription({ setCurrentStep }: Props) {
   const [selectedPlan, setSelectedPlan] = useState("professional");

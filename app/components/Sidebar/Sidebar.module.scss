@@ -21,7 +21,7 @@
   align-items: center;
   gap: 10px;
   font-size: $display-4;
-  font-weight: 600;
+  font-weight: $display-font-1;
   color: $neutral-800;
 
   &Icon {
@@ -63,7 +63,7 @@
   align-items: center;
   justify-content: center;
   font-size: $display-3;
-  font-weight: 600;
+  font-weight: $display-font-1;
   color: $neutral-600;
   transition: all 0.3s ease;
 }
@@ -95,7 +95,7 @@
 .content {
   h4 {
     font-size: $display-3;
-    font-weight: 600;
+    font-weight: $display-font-1;
     margin-bottom: 6px;
     color: $neutral-800;
     line-height: $lh-default;
@@ -116,7 +116,7 @@
 
   h4 {
     font-size: $display-3;
-    font-weight: 600;
+    font-weight: $display-font-1;
     color: $neutral-800;
     margin-bottom: 4px;
   }
