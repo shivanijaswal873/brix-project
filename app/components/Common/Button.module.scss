@@ -3,8 +3,8 @@
 @use "../../styles/abstracts/typography" as *;
 .btn {
   min-width: 160px;
-  padding: 14px 32px;
-  border-radius: 14px;
+  padding: $display-2 32px;
+  border-radius: $display-2;
   border: none;
   font-size: $display-3;
   font-weight: 600;
