@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import styles from "./Personal.module.scss";
 import FormInput from "./FormInput";
 import { personalFields, FormData } from "./FormFields";
-
+import Button from "../Common/Button";
 type Props = {
   setCurrentStep: React.Dispatch<React.SetStateAction<number>>;
 };
@@ -32,21 +32,17 @@ export default function PersonalForm({ setCurrentStep }: Props) {
           {personalFields.map((field) => (
             <FormInput
               key={field.name}
-              name={field.name}
-              label={field.label}
-              placeholder={field.placeholder}
+              {...field}
               register={register}
-              validation={field.validation}
               error={errors[field.name]}
-              fullWidth={field.fullWidth}
             />
           ))}
         </div>
 
         <div className={styles.form__actions}>
-          <button type="submit" disabled={!isValid}>
+          <Button type="submit" disabled={!isValid}>
             Continue
-          </button>
+          </Button>
         </div>
       </form>
     </div>
