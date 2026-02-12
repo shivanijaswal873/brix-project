@@ -11,9 +11,10 @@ import {
   FaCube,
 } from "react-icons/fa";
 import Button from "../Common/Button";
-interface Props {
+
+type Props = {
   setCurrentStep: (step: number) => void;
-}
+};
 
 const services = [
   { id: "dev", title: "Development", icon: <FaCode /> },

@@ -3,12 +3,12 @@
 @use "../../styles/abstracts/typography" as *;
 
 .services {
-  min-height: 100vh;
+  // min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background: $neutral-200;
-  padding: 40px $display-5;
+  padding: 20px $display-5;
 }
 
 .container {
@@ -21,7 +21,7 @@
 
   h2 {
     font-size: 28px;
-    font-weight: 600;
+    font-weight: $display-font-1;
     margin-bottom: 6px;
   }
 
@@ -49,7 +49,7 @@
   span {
     display: block;
     margin-top: $display-2;
-    font-weight: 500;
+    font-weight: $display-font-3;
     color: $neutral-700;
   }
 
@@ -61,11 +61,11 @@
 .active {
   border: 2px solid $purple-700;
   background: rgba($purple-200, 0.4);
-  box-shadow:  $shadow-02;
+  box-shadow: $shadow-02;
 
   span {
     color: $neutral-800;
-    font-weight: 600;
+    font-weight: $display-font-1;
   }
 }
 

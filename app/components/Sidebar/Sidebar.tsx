@@ -1,11 +1,11 @@
 "use client";
 
 import styles from "./Sidebar.module.scss";
-import {steps} from "./Sidebar-data";
+import { steps } from "./Sidebar-data";
 
-interface Props {
+type Props = {
   currentStep: number;
-}
+};
 
 export default function Sidebar({ currentStep }: Props) {
   return (
