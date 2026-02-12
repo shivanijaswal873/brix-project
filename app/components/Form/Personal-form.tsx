@@ -5,11 +5,13 @@ import styles from "./Personal.module.scss";
 import FormInput from "./FormInput";
 import { personalFields, FormData } from "./FormFields";
 import Button from "../Common/Button";
+
 type Props = {
   setCurrentStep: React.Dispatch<React.SetStateAction<number>>;
+  setFormData: React.Dispatch<React.SetStateAction<FormData | null>>;
 };
 
-export default function PersonalForm({ setCurrentStep }: Props) {
+export default function PersonalForm({ setCurrentStep, setFormData }: Props) {
   const {
     register,
     handleSubmit,
@@ -19,12 +21,13 @@ export default function PersonalForm({ setCurrentStep }: Props) {
   });
 
   const onSubmit = (data: FormData) => {
+    setFormData(data);
     console.log(data);
     setCurrentStep(2);
   };
 
   return (
-    <div className={styles.formWrapper}>
+    <section className={styles.formWrapper}>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <h2 className={styles.form__title}>Personal information</h2>
 
@@ -45,6 +48,6 @@ export default function PersonalForm({ setCurrentStep }: Props) {
           </Button>
         </div>
       </form>
-    </div>
+    </section>
   );
 }

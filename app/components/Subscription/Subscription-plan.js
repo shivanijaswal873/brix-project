@@ -1,4 +1,5 @@
 export const Plans = [
+
   {
     id: "basic",
     title: "Basic Plan",

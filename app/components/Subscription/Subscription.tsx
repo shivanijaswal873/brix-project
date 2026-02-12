@@ -7,9 +7,9 @@ import { FiCalendar } from "react-icons/fi";
 import { Plans } from "./Subscription-plan";
 import Button from "../Common/Button";
 
-interface Props {
+type Props = {
   setCurrentStep: (step: number) => void;
-}
+};
 
 export default function Subscription({ setCurrentStep }: Props) {
   const [selectedPlan, setSelectedPlan] = useState("professional");
@@ -20,8 +20,8 @@ export default function Subscription({ setCurrentStep }: Props) {
   };
 
   return (
-    <div className={styles.formWrapper}>
-      <div className={styles.wrapper}>
+    <section className={styles.subscription}>
+      <div className={styles.container}>
         <h2>Available plans</h2>
         <p>Select the plan that best fits your needs and budget.</p>
 
@@ -63,6 +63,6 @@ export default function Subscription({ setCurrentStep }: Props) {
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

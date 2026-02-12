@@ -3,7 +3,7 @@
 @use "../../styles/abstracts/typography" as *;
 
 
-.formWrapper {
+.subscription {
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -12,9 +12,9 @@
 }
 
 
-.wrapper {
+.container {
   width: 100%;
-  max-width: 820px;
+  max-width: 651px;
   background: $white;
   padding: $display-5;
   border-radius: 28px;
@@ -22,7 +22,7 @@
 
   h2 {
     font-size: 28px;
-    font-weight: 600;
+    font-weight: $display-font-1;
     color: $neutral-800;
     margin-bottom: 6px;
   }
@@ -55,7 +55,7 @@
 
   h4 {
     font-size: $display-3;
-    font-weight: 600;
+    font-weight: $display-font-1;
     color: $neutral-800;
     margin-bottom: 6px;
   }
@@ -74,7 +74,7 @@
 
 
 .active {
-  border: 2px solid #7b2ff7;
+  border: 2px solid $purple-600;
   background: $neutral-400;
   border: 2px solid $purple-700;
   background: rgba($purple-200, 0.4);
@@ -88,7 +88,7 @@
   right: $display-5;
   width: $display-4;
   height: $display-4;
-  border: 2px solid #7b2ff7;
+  border: 2px solid $purple-600;
   border: 2px solid $neutral-500;
   border-radius: 50%;
   transition: 0.2s ease;
@@ -142,7 +142,7 @@
   padding: 10px 40px;
   border-radius: $display-1;
   border: none;
-  background: linear-gradient(90deg, #7b2ff7, #9b4dff);
+  background: linear-gradient(90deg, $purple-600, #9b4dff);
   color: $white;
 }
 }
