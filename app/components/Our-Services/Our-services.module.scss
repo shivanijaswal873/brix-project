@@ -1,0 +1,90 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/shadows" as *;
+@use "../../styles/abstracts/typography" as *;
+
+.services {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $neutral-200;
+  padding: 40px $display-5;
+}
+
+.container {
+  width: 100%;
+  max-width: 651px;
+  background: $white;
+  border-radius: 28px;
+  padding: $display-9;
+  box-shadow: $shadow-02;
+
+  h2 {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  p {
+    color: $neutral-600;
+    margin-bottom: $display-8;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $display-6;
+}
+
+.card {
+  border: 1px solid $neutral-400;
+  border-radius: $display-5;
+  padding: 28px $display-5;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: $white;
+
+  span {
+    display: block;
+    margin-top: $display-2;
+    font-weight: 500;
+    color: $neutral-700;
+  }
+
+  &:hover {
+    border-color: $purple-500;
+  }
+}
+
+.active {
+  border: 2px solid $purple-700;
+  background: rgba($purple-200, 0.4);
+  box-shadow:  $shadow-02;
+
+  span {
+    color: $neutral-800;
+    font-weight: 600;
+  }
+}
+
+.iconBox {
+  width: $display-10;
+  height: $display-10;
+  margin: auto;
+  border-radius: 16px;
+  background: linear-gradient(135deg, $purple-700, $purple-600);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  font-size: 22px;
+  box-shadow: $shadow-03;
+}
+
+.buttons {
+  margin-top: $display-9;
+  display: flex;
+  justify-content: space-between;
+}

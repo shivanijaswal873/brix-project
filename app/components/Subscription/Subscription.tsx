@@ -20,8 +20,8 @@ export default function Subscription({ setCurrentStep }: Props) {
   };
 
   return (
-    <div className={styles.formWrapper}>
-      <div className={styles.wrapper}>
+    <section className={styles.subscription}>
+      <div className={styles.container}>
         <h2>Available plans</h2>
         <p>Select the plan that best fits your needs and budget.</p>
 
@@ -63,6 +63,6 @@ export default function Subscription({ setCurrentStep }: Props) {
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
