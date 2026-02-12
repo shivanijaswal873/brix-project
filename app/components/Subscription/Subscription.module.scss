@@ -1,7 +1,6 @@
 @use "../../styles/abstracts/variables" as *;
 @use "../../styles/abstracts/shadows" as *;
 @use "../../styles/abstracts/typography" as *;
-@use "../../styles/abstracts/breakpoints" as *;
 
 
 .formWrapper {
@@ -9,7 +8,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: clamp(20px, 5vw, 60px);
   background: $neutral-200;
 }
 
@@ -35,10 +33,6 @@
     font-size: 14px;
   }
 
-  @include respond(mobile) {
-    padding: 28px;
-    border-radius: 20px;
-  }
 }
 
 
@@ -47,9 +41,6 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 
-  @include respond(tablet) {
-    grid-template-columns: 1fr;
-  }
 }
 
 
@@ -73,7 +64,7 @@
     font-size: 14px;
     color: $neutral-600;
     margin-bottom: 18px;
-  }
+}
 
   &:hover {
     border-color: $purple-500;
@@ -83,6 +74,8 @@
 
 
 .active {
+  border: 2px solid #7b2ff7;
+  background: $neutral-400;
   border: 2px solid $purple-700;
   background: rgba($purple-200, 0.4);
   box-shadow: 0 4px 12px rgba(123, 47, 247, 0.08);
@@ -95,37 +88,61 @@
   right: 20px;
   width: 18px;
   height: 18px;
+  border: 2px solid #7b2ff7;
   border: 2px solid $neutral-500;
   border-radius: 50%;
   transition: 0.2s ease;
 }
 
 .active .radio {
+  background: $purple-600;
   border-color: $purple-700;
   background: $purple-700;
 }
 
 .tags {
   display: flex;
+  gap: 10px;
   gap: 12px;
   flex-wrap: wrap;
 
   span {
     font-size: 12px;
+    background: $neutral-500;
+    padding: 6px 10px;
     background: $neutral-300;
     padding: 6px 12px;
     border-radius: 20px;
     display: flex;
     align-items: center;
+    gap: 5px;
     gap: 6px;
     color: $neutral-700;
   }
 }
 
+.buttons {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
 .active .tags span {
   background: rgba($purple-200, 0.7);
   color: $purple-700;
 }
 
 
+.back {
+  padding: 10px 30px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  background: $white;
+}
 
+.continue {
+  padding: 10px 40px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg, #7b2ff7, #9b4dff);
+  color: $white;
+}
+}
