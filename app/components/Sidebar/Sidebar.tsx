@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./Sidebar.module.scss";
-import {steps} from "@/app/data/Sidebar-data";
+import {steps} from "./Sidebar-data";
 
 interface Props {
   currentStep: number;
