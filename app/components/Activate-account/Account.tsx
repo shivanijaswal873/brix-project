@@ -45,7 +45,7 @@ export default function Account({ formData, setCurrentStep }: Props) {
         </div>
 
         <div className={styles.buttons}>
-          <Button variant="secondary" onClick={() => setCurrentStep(1)}>
+          <Button variant="secondary" onClick={() => setCurrentStep(3)}>
             Back
           </Button>
         </div>
