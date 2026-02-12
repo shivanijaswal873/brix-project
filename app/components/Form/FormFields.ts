@@ -1,13 +1,5 @@
 import { RegisterOptions } from "react-hook-form";
 
-export type FieldConfig = {
-  name: keyof FormData;
-  label: string;
-  placeholder: string;
-  type?: string;
-  validation?: RegisterOptions;
-  fullWidth?: boolean;
-};
 
 export type FormData = {
   fullName: string;
@@ -16,6 +8,32 @@ export type FormData = {
   company: string;
   address: string;
 };
+
+export type FieldConfig = {
+  name: keyof FormData;
+  label: string;
+  placeholder: string;
+  type?: string;
+  validation?: RegisterOptions<FormData>;
+  fullWidth?: boolean;
+};
+
+
+const namePattern = {
+  value: /^[A-Za-z\s]+$/,
+  message: "Only letters allowed",
+};
+
+const emailPattern = {
+  value: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/,
+  message: "Enter a valid email address",
+};
+
+const phonePattern = {
+  value: /^[0-9]{10}$/,
+  message: "Phone number must be exactly 10 digits",
+};
+
 
 export const personalFields: FieldConfig[] = [
   {
@@ -28,49 +46,35 @@ export const personalFields: FieldConfig[] = [
         value: 3,
         message: "Minimum 3 characters",
       },
-      pattern: {
-        value: /^[A-Za-z\s]+$/, 
-        message: "Name should not contain numbers",
-      },
+      pattern: namePattern,
     },
   },
   {
     name: "email",
     label: "Email",
     placeholder: "Enter your email",
+    type: "email",
     validation: {
       required: "Email is required",
-      pattern: {
-        value: /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, 
-        message: "Enter a valid email address",
-      },
+      pattern: emailPattern,
     },
   },
   {
     name: "phone",
     label: "Phone number",
     placeholder: "Enter 10 digit number",
+    type: "tel",
     validation: {
       required: "Phone number is required",
-      pattern: {
-        value: /^[0-9]{10}$/, 
-        message: "Phone number must be exactly 10 digits",
-      },
-      maxLength: {
-        value: 10,
-        message: "Phone number cannot exceed 10 digits",
-      },
+      pattern: phonePattern,
     },
   },
   {
     name: "company",
     label: "Company",
     placeholder: "Exp. Company",
-   validation: {
-      pattern: {
-        value: /^[A-Za-z\s]+$/, 
-        message: "Company name should not contain numbers",
-      },
+    validation: {
+      pattern: namePattern,
     },
   },
   {

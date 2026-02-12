@@ -1,6 +1,7 @@
 @use "../../styles/abstracts/variables" as *;
 @use "../../styles/abstracts/shadows" as *;
 @use "../../styles/abstracts/typography" as *;
+@use "../../styles/abstracts/breakpoints" as *;
 
 .sidebar {
   width: 320px;

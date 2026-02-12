@@ -1,0 +1,46 @@
+@use "../../styles/abstracts/variables" as *;
+@use "../../styles/abstracts/shadows" as *;
+@use "../../styles/abstracts/typography" as *;
+.btn {
+  min-width: 160px;
+  padding: 14px 32px;
+  border-radius: 14px;
+  border: none;
+  font-size: $display-3;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.primary {
+  background: linear-gradient(135deg, $purple-700, $purple-600);
+  color: $white;
+  box-shadow: $shadow-03;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: $shadow-04;
+  }
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid $neutral-400;
+  color: $neutral-700;
+
+  &:hover:not(:disabled) {
+    background: $neutral-300;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
