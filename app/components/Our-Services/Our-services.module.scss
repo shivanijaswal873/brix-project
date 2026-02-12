@@ -3,7 +3,6 @@
 @use "../../styles/abstracts/typography" as *;
 
 .services {
-  // min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +15,7 @@
   max-width: 651px;
   background: $white;
   border-radius: 28px;
-  padding: $display-9;
+  padding: $display-7;
   box-shadow: $shadow-02;
 
   h2 {
@@ -42,6 +41,7 @@
   border-radius: $display-5;
   padding: 28px $display-5;
   text-align: center;
+  width: 162px;
   cursor: pointer;
   transition: all 0.25s ease;
   background: $white;
