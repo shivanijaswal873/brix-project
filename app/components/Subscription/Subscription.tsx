@@ -7,17 +7,8 @@ import { FiCalendar } from "react-icons/fi";
 import { Plans } from "./Subscription-plan";
 import Button from "../Common/Button";
 
-type Props = {
-  setCurrentStep: (step: number) => void;
-};
-
-export default function Subscription({ setCurrentStep }: Props) {
-  const [selectedPlan, setSelectedPlan] = useState("professional");
-
-  const handleContinue = () => {
-    console.log(selectedPlan);
-    setCurrentStep(3);
-  };
+export default function Subscription({ setCurrentStep }:any) {
+  const [selectedPlan,setSelectedPlan]=useState("professional");
 
   return (
     <section className={styles.subscription}>
@@ -25,20 +16,20 @@ export default function Subscription({ setCurrentStep }: Props) {
         <h2>Available plans</h2>
         <p>Select the plan that best fits your needs and budget.</p>
 
-        <div className={styles.planGrid}>
+      <div className={styles.planGrid}>
           {Plans.map((plan) => {
             const isActive = selectedPlan === plan.id;
 
             return (
-              <button
-                type="button"
-                key={plan.id}
+          <button
+            type="button"
+            key={plan.id}
                 onClick={() => setSelectedPlan(plan.id)}
                 className={`${styles.card} ${isActive ? styles.active : ""}`}
-              >
+          >
                 <div className={styles.radio} />
-                <h4>{plan.title}</h4>
-                <p>{plan.desc}</p>
+            <h4>{plan.title}</h4>
+            <p>{plan.desc}</p>
 
                 <div className={styles.tags}>
                   <span>
@@ -48,7 +39,7 @@ export default function Subscription({ setCurrentStep }: Props) {
                     <FiCalendar /> {plan.billing}
                   </span>
                 </div>
-              </button>
+          </button>
             );
           })}
         </div>
@@ -58,7 +49,7 @@ export default function Subscription({ setCurrentStep }: Props) {
             Back
           </Button>
 
-          <Button variant="primary" onClick={handleContinue}>
+          <Button variant="primary" onClick={()=>setCurrentStep(3)}>
             Continue
           </Button>
         </div>
