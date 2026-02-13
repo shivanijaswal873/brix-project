@@ -17,7 +17,6 @@
   transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-
 @include mobile {
   .sidebar {
     position: fixed;
@@ -139,22 +138,43 @@
   color: $neutral-500;
   line-height: $lh-default;
 }
-
 .help {
-  margin-top: 40px;
+  margin-top: auto;
+  background: #f3f2f7;
+  padding: 16px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding-top: $display-6;
   border-top: 1px solid $neutral-400;
 }
 
-.help h4 {
-  font-size: $display-3;
-  font-weight: $display-font-1;
-  color: $neutral-800;
-  margin-bottom: 4px;
+.helpText {
+  h4 {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    color: #1e1e2d;
+  }
+
+  p {
+    font-size: 12px;
+    color: #8f8fa3;
+    margin: 4px 0 0 0;
+  }
 }
-.help p {
-  font-size: $display-2;
-  color: $neutral-500;
+
+.helpIcon {
+  width: 36px;
+  height: 36px;
+  background: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c63ff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
 }
 
 .menuBtn {
@@ -254,4 +274,27 @@ body.sidebar-open {
   .help {
     display: none;
   }
+}
+.progress {
+  width: 3px;
+  height: $display-7;
+  margin-top: 8px;
+  appearance: none;
+  writing-mode: vertical-lr;
+}
+
+.progress::-webkit-progress-bar {
+  background: $neutral-400;
+  border-radius: 20px;
+}
+
+.progress::-webkit-progress-value {
+  background: linear-gradient(to bottom, $purple-700, $purple-600);
+  border-radius: 20px;
+  transition: all 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.progress::-moz-progress-bar {
+  background: linear-gradient(to bottom, $purple-700, $purple-600);
+  border-radius: 20px;
 }

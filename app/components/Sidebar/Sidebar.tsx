@@ -3,6 +3,7 @@
 import { useState } from "react";
 import styles from "./Sidebar.module.scss";
 import { steps } from "./Sidebar-data";
+import { FiHeadphones } from "react-icons/fi";
 
 type Props = {
   currentStep: number;
@@ -44,18 +45,24 @@ export default function Sidebar({ currentStep }: Props) {
                 <div className={styles.leftSection}>
                   <div
                     className={`${styles.circle}
-                    ${isActive ? styles.active : ""}
-                    ${isCompleted ? styles.completed : ""}
-                  `}
+                      ${isActive ? styles.active : ""}
+                      ${isCompleted ? styles.completed : ""}
+                    `}
                   >
-                    {step.id}
+                    {isCompleted ? step.id : step.id}
                   </div>
 
                   {index !== steps.length - 1 && (
-                    <div
-                      className={`${styles.line}
-                      ${currentStep > step.id ? styles.lineActive : ""}
-                    `}
+                    <progress
+                      className={styles.progress}
+                      value={
+                        currentStep > step.id
+                          ? 100
+                          : currentStep === step.id
+                            ? 70
+                            : 0
+                      }
+                      max={100}
                     />
                   )}
                 </div>
@@ -68,13 +75,16 @@ export default function Sidebar({ currentStep }: Props) {
             );
           })}
         </div>
+<div className={styles.help}>
+  <div className={styles.helpText}>
+    <h4>Need a help?</h4>
+    <p>chat with live support</p>
+  </div>
 
-        <div className={styles.help}>
-          <div>
-            <h4>Need a help?</h4>
-            <p>chat with live support</p>
-          </div>
-        </div>
+  <div className={styles.helpIcon}>
+    <FiHeadphones size={20} />
+  </div>
+</div>
       </div>
     </>
   );
