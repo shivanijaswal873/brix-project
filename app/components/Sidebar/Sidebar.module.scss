@@ -1,7 +1,7 @@
-@use "../../styles/abstracts/variables" as *;
-@use "../../styles/abstracts/shadows" as *;
-@use "../../styles/abstracts/typography" as *;
-@use "../../styles/abstracts/breakpoints" as *;
+@use "../../Styles/abstracts/variables" as *;
+@use "../../Styles/abstracts/shadows" as *;
+@use "../../Styles/abstracts/typography" as *;
+@use "../../Styles/abstracts/breakpoints" as *;
 
 .sidebar {
   min-height: 100vh;
