@@ -12,9 +12,7 @@ import {
 } from "react-icons/fa";
 import Button from "../Common/Button";
 
-type Props = {
-  setCurrentStep: (step: number) => void;
-};
+
 
 const services = [
   { id: "dev", title: "Development", icon: <FaCode /> },
@@ -25,13 +23,9 @@ const services = [
   { id: "other", title: "Other", icon: <FaCube /> },
 ];
 
-export default function Service({ setCurrentStep }: Props) {
+export default function Service({ setCurrentStep }: any) {
   const [selected, setSelected] = useState<string | null>(null);
 
-  const handleContinue = () => {
-    if (!selected) return;
-    setCurrentStep(4);
-  };
 
   return (
     <section className={styles.services}>
@@ -64,7 +58,7 @@ export default function Service({ setCurrentStep }: Props) {
           <Button
             variant="primary"
             disabled={!selected}
-            onClick={handleContinue}
+            onClick={()=>setCurrentStep(4)}
           >
             Continue
           </Button>

@@ -1,34 +1,20 @@
 "use client";
 
-import { useForm } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import styles from "./Personal.module.scss";
 import FormInput from "./FormInput";
 import { personalFields, FormData } from "./FormFields";
 import Button from "../Common/Button";
 
-type Props = {
-  setCurrentStep: React.Dispatch<React.SetStateAction<number>>;
-  setFormData: React.Dispatch<React.SetStateAction<FormData | null>>;
-};
-
-export default function PersonalForm({ setCurrentStep, setFormData }: Props) {
+export default function PersonalForm({ setCurrentStep }: any) {
   const {
     register,
-    handleSubmit,
     formState: { errors, isValid },
-  } = useForm<FormData>({
-    mode: "onChange",
-  });
-
-  const onSubmit = (data: FormData) => {
-    setFormData(data);
-    console.log(data);
-    setCurrentStep(2);
-  };
+  } = useFormContext<FormData>();
 
   return (
     <section className={styles.formWrapper}>
-      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+      <div className={styles.form}>
         <h2 className={styles.form__title}>Personal information</h2>
 
         <div className={styles.form__grid}>
@@ -43,11 +29,15 @@ export default function PersonalForm({ setCurrentStep, setFormData }: Props) {
         </div>
 
         <div className={styles.form__actions}>
-          <Button type="submit" disabled={!isValid}>
+          <Button
+            type="submit"
+            onClick={() => setCurrentStep(2)}
+            disabled={!isValid}
+          >
             Continue
           </Button>
         </div>
-      </form>
+      </div>
     </section>
   );
 }
