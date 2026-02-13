@@ -1,18 +1,15 @@
 "use client";
-import { useState } from "react";
-import { FormData } from "../Form/FormFields";
+
+import { useFormContext } from "react-hook-form";
 import styles from "./Account.module.scss";
 import Button from "../Common/Button";
+import { FormData } from "../Form/FormFields";
 
-type Props = {
-  formData: FormData | null;
-  setCurrentStep: (step: number) => void;
-};
-
-export default function Account({ formData, setCurrentStep }: Props) {
-  const [selected, setSelected] = useState<string | null>(null);
-
-  if (!formData) {
+export default function Account({ restartForm }: any) {
+  const { getValues } = useFormContext<FormData>();
+  const formData = getValues();
+  
+if (!formData) {
     return <div>No Data Found</div>;
   }
 
@@ -45,7 +42,7 @@ export default function Account({ formData, setCurrentStep }: Props) {
         </div>
 
         <div className={styles.buttons}>
-          <Button variant="secondary" onClick={() => setCurrentStep(1)}>
+          <Button variant="secondary" onClick={restartForm}>
             Back
           </Button>
         </div>
