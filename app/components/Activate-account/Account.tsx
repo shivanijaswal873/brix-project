@@ -25,7 +25,7 @@ export default function Account({ formData, setCurrentStep }: Props) {
           Your information has been successfully received.
         </p>
 
-        <div className={styles.details}>
+        <div className={styles?.details}>
           <p>
             <span>Name:</span> {formData.fullName}
           </p>
@@ -37,7 +37,7 @@ export default function Account({ formData, setCurrentStep }: Props) {
           </p>
           <p>
             <span>Company:</span>
-            {formData.company}{" "}
+            {formData.company}
           </p>
           <p>
             <span>Address:</span> {formData.address}
@@ -45,7 +45,7 @@ export default function Account({ formData, setCurrentStep }: Props) {
         </div>
 
         <div className={styles.buttons}>
-          <Button variant="secondary" onClick={() => setCurrentStep(3)}>
+          <Button variant="secondary" onClick={() => setCurrentStep(1)}>
             Back
           </Button>
         </div>

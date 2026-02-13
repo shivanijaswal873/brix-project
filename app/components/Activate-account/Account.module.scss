@@ -1,6 +1,7 @@
 @use "../../styles/abstracts/variables" as *;
 @use "../../styles/abstracts/shadows" as *;
 @use "../../styles/abstracts/typography" as *;
+@use "../../Styles/abstracts/breakpoints" as *;
 
 .wrapper {
   min-height: 100vh;
@@ -9,6 +10,11 @@
   align-items: center;
   background: $neutral-200;
   padding: clamp($display-5, 5vw, $display-10);
+
+  @include tablet {
+    display: flex;
+    align-items: flex-start;
+  }
 }
 
 .card {

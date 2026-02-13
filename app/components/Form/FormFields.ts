@@ -1,6 +1,5 @@
 import { RegisterOptions } from "react-hook-form";
 
-
 export type FormData = {
   fullName: string;
   email: string;
