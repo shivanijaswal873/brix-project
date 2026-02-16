@@ -2,11 +2,13 @@
   "name": "brix-templates",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -18,12 +20,16 @@
     "sass": "^1.97.3"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.6",
+    "eslint": "^9.39.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "globals": "^17.3.0",
+    "prettier": "^3.8.1",
     "tailwindcss": "^4.1.18",
     "typescript": "^5"
   }

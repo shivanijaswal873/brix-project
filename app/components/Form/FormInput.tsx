@@ -1,6 +1,6 @@
-import { FieldError, UseFormRegister } from "react-hook-form";
-import styles from "./Personal.module.scss";
-import { FormData } from "./FormFields";
+import { FieldError, UseFormRegister } from 'react-hook-form';
+import styles from './Personal.module.scss';
+import { FormData } from './FormFields';
 
 type Props = {
   name: keyof FormData;
@@ -24,7 +24,7 @@ export default function FormInput({
   return (
     <div
       className={`${styles.form__field} ${
-        fullWidth ? styles["form__field--full"] : ""
+        fullWidth ? styles['form__field--full'] : ''
       }`}
     >
       <label>

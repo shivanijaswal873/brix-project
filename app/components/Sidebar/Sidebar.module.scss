@@ -1,7 +1,7 @@
-@use "../../Styles/abstracts/variables" as *;
-@use "../../Styles/abstracts/shadows" as *;
-@use "../../Styles/abstracts/typography" as *;
-@use "../../Styles/abstracts/breakpoints" as *;
+@use '../../Styles/abstracts/variables' as *;
+@use '../../Styles/abstracts/shadows' as *;
+@use '../../Styles/abstracts/typography' as *;
+@use '../../Styles/abstracts/breakpoints' as *;
 
 .sidebar {
   min-height: 100vh;
@@ -174,7 +174,7 @@
   align-items: center;
   justify-content: center;
   color: #6c63ff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
 }
 
 .menuBtn {

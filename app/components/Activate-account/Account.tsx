@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
-import styles from "./Account.module.scss";
-import Button from "../Common/Button";
-import { FormData } from "../Form/FormFields";
+import { useFormContext } from 'react-hook-form';
+import styles from './Account.module.scss';
+import Button from '../Common/Button';
+import { FormData } from '../Form/FormFields';
 
 export default function Account({ restartForm }: any) {
   const { getValues } = useFormContext<FormData>();
   const formData = getValues();
-  
-if (!formData) {
+
+  if (!formData) {
     return <div>No Data Found</div>;
   }
 

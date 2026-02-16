@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import styles from "./Sidebar.module.scss";
-import { steps } from "./Sidebar-data";
-import { FiHeadphones } from "react-icons/fi";
+import { useState } from 'react';
+import styles from './Sidebar.module.scss';
+import { steps } from './Sidebar-data';
+import { FiHeadphones } from 'react-icons/fi';
 
 type Props = {
   currentStep: number;
@@ -25,7 +25,7 @@ export default function Sidebar({ currentStep }: Props) {
 
       {isOpen && <div className={styles.overlay} onClick={closeSidebar} />}
 
-      <div className={`${styles.sidebar} ${isOpen ? styles.open : ""}`}>
+      <div className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
         <div className={styles.logo}>
           <div className={styles.logoIcon}></div>
           <span>brix templates</span>
@@ -45,8 +45,8 @@ export default function Sidebar({ currentStep }: Props) {
                 <div className={styles.leftSection}>
                   <div
                     className={`${styles.circle}
-                      ${isActive ? styles.active : ""}
-                      ${isCompleted ? styles.completed : ""}
+                      ${isActive ? styles.active : ''}
+                      ${isCompleted ? styles.completed : ''}
                     `}
                   >
                     {isCompleted ? step.id : step.id}
@@ -75,16 +75,16 @@ export default function Sidebar({ currentStep }: Props) {
             );
           })}
         </div>
-<div className={styles.help}>
-  <div className={styles.helpText}>
-    <h4>Need a help?</h4>
-    <p>chat with live support</p>
-  </div>
+        <div className={styles.help}>
+          <div className={styles.helpText}>
+            <h4>Need a help?</h4>
+            <p>chat with live support</p>
+          </div>
 
-  <div className={styles.helpIcon}>
-    <FiHeadphones size={20} />
-  </div>
-</div>
+          <div className={styles.helpIcon}>
+            <FiHeadphones size={20} />
+          </div>
+        </div>
       </div>
     </>
   );

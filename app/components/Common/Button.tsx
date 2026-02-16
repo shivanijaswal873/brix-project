@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { ComponentPropsWithoutRef } from "react";
-import styles from "./Button.module.scss";
-import clsx from "clsx";
+import { ComponentPropsWithoutRef } from 'react';
+import styles from './Button.module.scss';
+import clsx from 'clsx';
 
-type ButtonVariant = "primary" | "secondary";
+type ButtonVariant = 'primary' | 'secondary';
 
-interface ButtonProps extends ComponentPropsWithoutRef<"button"> {
+interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   variant?: ButtonVariant;
   fullWidth?: boolean;
 }
 
 export default function Button({
   children,
-  variant = "primary",
+  variant = 'primary',
   fullWidth = false,
   className,
   ...rest
@@ -24,7 +24,7 @@ export default function Button({
         styles.btn,
         styles[variant],
         fullWidth && styles.fullWidth,
-        className,
+        className
       )}
       {...rest}
     >

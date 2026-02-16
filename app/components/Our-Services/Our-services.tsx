@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import styles from "./Our-services.module.scss";
+import { useState } from 'react';
+import styles from './Our-services.module.scss';
 import {
   FaCode,
   FaPaintBrush,
@@ -9,23 +9,20 @@ import {
   FaChartBar,
   FaCog,
   FaCube,
-} from "react-icons/fa";
-import Button from "../Common/Button";
-
-
+} from 'react-icons/fa';
+import Button from '../Common/Button';
 
 const services = [
-  { id: "dev", title: "Development", icon: <FaCode /> },
-  { id: "design", title: "Web Design", icon: <FaPaintBrush /> },
-  { id: "marketing", title: "Marketing", icon: <FaBullhorn /> },
-  { id: "brand", title: "Brand Strategy", icon: <FaChartBar /> },
-  { id: "opt", title: "Optimization", icon: <FaCog /> },
-  { id: "other", title: "Other", icon: <FaCube /> },
+  { id: 'dev', title: 'Development', icon: <FaCode /> },
+  { id: 'design', title: 'Web Design', icon: <FaPaintBrush /> },
+  { id: 'marketing', title: 'Marketing', icon: <FaBullhorn /> },
+  { id: 'brand', title: 'Brand Strategy', icon: <FaChartBar /> },
+  { id: 'opt', title: 'Optimization', icon: <FaCog /> },
+  { id: 'other', title: 'Other', icon: <FaCube /> },
 ];
 
 export default function Service({ setCurrentStep }: any) {
   const [selected, setSelected] = useState<string | null>(null);
-
 
   return (
     <section className={styles.services}>
@@ -41,7 +38,7 @@ export default function Service({ setCurrentStep }: any) {
               <div
                 key={item.id}
                 onClick={() => setSelected(item.id)}
-                className={`${styles.card} ${isActive ? styles.active : ""}`}
+                className={`${styles.card} ${isActive ? styles.active : ''}`}
               >
                 <div className={styles.iconBox}>{item.icon}</div>
                 <span>{item.title}</span>
@@ -58,7 +55,7 @@ export default function Service({ setCurrentStep }: any) {
           <Button
             variant="primary"
             disabled={!selected}
-            onClick={()=>setCurrentStep(4)}
+            onClick={() => setCurrentStep(4)}
           >
             Continue
           </Button>

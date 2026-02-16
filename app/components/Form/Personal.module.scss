@@ -1,7 +1,7 @@
-@use "../../Styles/abstracts/variables" as *;
-@use "../../Styles/abstracts/shadows" as *;
-@use "../../Styles/abstracts/typography" as *;
-@use "../../Styles/abstracts/breakpoints" as *;
+@use '../../Styles/abstracts/variables' as *;
+@use '../../Styles/abstracts/shadows' as *;
+@use '../../Styles/abstracts/typography' as *;
+@use '../../Styles/abstracts/breakpoints' as *;
 
 .formWrapper {
   flex: 1;
@@ -123,7 +123,7 @@
   .form {
     padding: $display-13;
     min-height: 80vh;
-  
+
     &__grid {
       grid-template-columns: 1fr 1fr;
       gap: 40px;

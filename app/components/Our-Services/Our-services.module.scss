@@ -1,7 +1,7 @@
-@use "../../Styles/abstracts/variables" as *;
-@use "../../Styles/abstracts/shadows" as *;
-@use "../../Styles/abstracts/typography" as *;
-@use "../../Styles/abstracts/breakpoints" as *;
+@use '../../Styles/abstracts/variables' as *;
+@use '../../Styles/abstracts/shadows' as *;
+@use '../../Styles/abstracts/typography' as *;
+@use '../../Styles/abstracts/breakpoints' as *;
 
 .services {
   display: flex;

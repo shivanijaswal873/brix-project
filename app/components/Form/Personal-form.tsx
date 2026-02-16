@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useFormContext } from "react-hook-form";
-import styles from "./Personal.module.scss";
-import FormInput from "./FormInput";
-import { personalFields, FormData } from "./FormFields";
-import Button from "../Common/Button";
+import { useFormContext } from 'react-hook-form';
+import styles from './Personal.module.scss';
+import FormInput from './FormInput';
+import { personalFields, FormData } from './FormFields';
+import Button from '../Common/Button';
 
 export default function PersonalForm({ setCurrentStep }: any) {
   const {
