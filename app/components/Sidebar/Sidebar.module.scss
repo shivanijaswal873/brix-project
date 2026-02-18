@@ -4,15 +4,21 @@
 @use '../../Styles/abstracts/breakpoints' as *;
 
 .sidebar {
-  min-height: 100vh;
-  width: 320px;
-  min-width: 320px;
+  width: 348px;
+  min-width: 348px;
+  height: 746px;
+
+  box-sizing: border-box; 
+
   flex-shrink: 0;
   background: $purple-200;
-  padding: 40px $display-7;
+
+  padding: 40px 45.5px; 
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   border-radius: $display-6;
   transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -39,6 +45,7 @@
 .logo {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   font-size: $display-4;
   font-weight: $display-font-1;
