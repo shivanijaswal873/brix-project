@@ -4,6 +4,7 @@
 @use '../../Styles/abstracts/breakpoints' as *;
 
 .services {
+  
   display: flex;
   justify-content: center;
   background: $neutral-200;
@@ -19,11 +20,12 @@
 }
 
 .container {
-  width: 100%;
-  max-width: 720px;
+  width: 651px;
+
+height: 646px;
   background: $white;
   border-radius: $display-13;
-  padding: $display-7;
+  padding: 48px;
   box-shadow: $shadow-02;
 
   @include tablet {
